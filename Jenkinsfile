@@ -71,13 +71,10 @@ pipeline {
                         <li>✓ Package created</li>
                         <li>✓ Survey application is ready</li>
                     </ul>
-                    <p><b>Total Tests:</b> ${currentBuild.rawBuild.getLog(100).findAll{it =~ 'Tests run:'}.last()}</p>
                     <hr>
                     <p><i>Jenkins Pipeline | College Survey System</i></p>
                 """,
-                to: "${EMAIL_RECIPIENTS}",
-                replyTo: "jenkins@college.com",
-                subject: "SUCCESS: Survey Build #${env.BUILD_NUMBER}"
+                to: "${EMAIL_RECIPIENTS}"
             )
             echo "📧 Success email sent!"
         }
@@ -102,8 +99,7 @@ pipeline {
                     <hr>
                     <p><i>Investigate immediately - Pipeline broken!</i></p>
                 """,
-                to: "${EMAIL_RECIPIENTS}",
-                subject: "FAILED: Survey Build #${env.BUILD_NUMBER}"
+                to: "${EMAIL_RECIPIENTS}"
             )
             echo "📧 Failure email sent!"
         }
@@ -119,8 +115,7 @@ pipeline {
                     <p><b>Build URL:</b> <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a></p>
                     <p>Check test reports for details.</p>
                 """,
-                to: "${EMAIL_RECIPIENTS}",
-                subject: "UNSTABLE: Survey Build #${env.BUILD_NUMBER}"
+                to: "${EMAIL_RECIPIENTS}"
             )
         }
         
