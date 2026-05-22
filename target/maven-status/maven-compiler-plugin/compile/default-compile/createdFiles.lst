@@ -1,4 +1,6 @@
+com/college/survey/SurveyApp.class
+com/college/survey/App.class
+com/college/survey/SurveyApp$SurveyResponse.class
 com/college/survey/controller/SurveyController.class
 com/college/survey/repository/SurveyRepository.class
 com/college/survey/model/Survey.class
-com/college/survey/App.class
